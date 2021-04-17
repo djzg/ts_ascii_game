@@ -1,0 +1,41 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Vector = _interopRequireDefault(require("./Vector"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+;
+
+const drawingOperation = tile => ({
+  tile,
+  char: tile.char,
+  color: tile.color.clone(),
+  background: tile.background.clone(),
+  pos: tile.pos.clone(),
+  isVisible: tile.isVisible
+});
+
+class Layer {
+  constructor(options) {
+    _defineProperty(this, "operations", []);
+
+    this.opacity = options.opacity || 1;
+    this.isVisible = options.isVisible || true;
+    this.pos = options.pos || _Vector.default.Zero();
+    this.size = options.size;
+  }
+
+  draw(tile) {
+    this.operations.push(drawingOperation(tile));
+  }
+
+}
+
+exports.default = Layer;

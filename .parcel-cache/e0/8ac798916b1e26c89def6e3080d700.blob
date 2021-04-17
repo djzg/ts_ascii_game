@@ -1,0 +1,26 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Color = _interopRequireDefault(require("./Color"));
+
+var _Vector = _interopRequireDefault(require("./Vector"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class Tile {
+  constructor(options) {
+    this.char = options.char || ' ';
+    this.color = options.color || new _Color.default();
+    this.background = options.background || new _Color.default(0, 0, 0, 1);
+    this.pos = options.pos || new _Vector.default(0, 0);
+    this.isVisible = options.isVisible || true;
+  }
+
+}
+
+exports.default = Tile;
+;

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCII Engine</title>
+
+  <style>* {
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;      
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+
+    }
+    
+    #asc-engine-layer-container {
+      position: relative;
+    }
+
+    .asc-engine-layer {
+      position: absolute;
+      overflow: hidden;
+    }
+
+    .asc-engine-tile {
+      position: absolute;
+      overflow: hidden;
+    }
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsiLi9zcmMvaW5kZXguaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6W251bGxdLCJuYW1lcyI6W10sInZlcnNpb24iOjMsImZpbGUiOiJ0c19hc2NpaV9nYW1lLjM4MjMzNzc2LmNzcy5tYXAiLCJzb3VyY2VSb290IjoiL19fcGFyY2VsX3NvdXJjZV9yb290LyJ9 */
+</style>
+</head>
+<body>
+  
+  <div id="asc-engine-layer-container"></div>
+  <script src="/ts_ascii_game.8f818f69.js"></script>
+</body>
+</html>

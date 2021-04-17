@@ -1,0 +1,68 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+class Color {
+  constructor(r = 255, g = 255, b = 255, a = 1) {
+    this._r = r;
+    this._g = g;
+    this._b = b;
+    this._a = a;
+    this.makeCssString();
+  }
+
+  get r() {
+    return this._r;
+  }
+
+  get g() {
+    return this._g;
+  }
+
+  get b() {
+    return this._b;
+  }
+
+  get a() {
+    return this._a;
+  }
+
+  set r(value) {
+    this._r = value;
+    this.makeCssString();
+  }
+
+  set g(value) {
+    this._g = value;
+    this.makeCssString();
+  }
+
+  set b(value) {
+    this._b = value;
+    this.makeCssString();
+  }
+
+  set a(value) {
+    this._a = value;
+    this.makeCssString();
+  }
+
+  makeCssString() {
+    this.cssString = `rgba(${this._r}, ${this._g}, ${this._b}, ${this._a})`;
+  }
+
+  toCssString() {
+    return this.cssString;
+  }
+
+  clone() {
+    return new Color(this._r, this._g, this._b, this._a);
+  }
+
+}
+
+exports.default = Color;
+;

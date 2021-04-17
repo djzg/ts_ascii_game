@@ -1,0 +1,42 @@
+"use strict";
+
+var _Color = _interopRequireDefault(require("./Color"));
+
+var _Layer = _interopRequireDefault(require("./Layer"));
+
+var _tile = _interopRequireDefault(require("./tile"));
+
+var _Vector = _interopRequireDefault(require("./Vector"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const WIDTH = 80;
+const HEIGTH = 24;
+const layers = {
+  background: new _Layer.default({
+    size: new _Vector.default(WIDTH, HEIGTH)
+  }),
+  actor: new _Layer.default({
+    size: new _Vector.default(WIDTH, HEIGTH)
+  })
+};
+const player = new _tile.default({
+  background: new _Color.default(0, 0, 0, 0),
+  char: '@',
+  color: new _Color.default(255),
+  isVisible: true,
+  pos: _Vector.default.Zero()
+});
+const backgroundTiles = Array.from({
+  length: WIDTH * HEIGTH
+}, (_, i) => {
+  const x = i % WIDTH;
+  const y = Math.floor(i / WIDTH);
+  return new _tile.default({
+    char: '-',
+    pos: new _Vector.default(x, y)
+  });
+});
+backgroundTiles.forEach(tile => layers.background.draw(tile));
+layers.actor.draw(player);
+console.log(layers);
